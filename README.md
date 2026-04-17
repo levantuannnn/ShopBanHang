@@ -18,8 +18,8 @@
 
 ## 🛠 Công nghệ sử dụng
 
-- HTML / CSS / JavaScript
-- (Nếu có React thì ghi thêm React)
+- HTML / CSS / JavaScript(React)
+- Python(FastAPI)
 - Git & GitHub
 
 ---
