@@ -2,8 +2,8 @@ import React from "react";
 
 function Footer() {
     return (
-        <footer className="bg-slate-900 text-white mt-10">
-            <div className="max-w-6xl mx-auto px-6 py-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+        <footer className=" w-full bg-slate-900 text-white mt-2">
+            <div className="max-w-7xl mx-auto px-4 py-8 grid grid-cols-1 md:grid-cols-3 gap-6">
 
                 <div>
                     <h2 className="text-xl font-semibold mb-2">Hỗ trợ</h2>

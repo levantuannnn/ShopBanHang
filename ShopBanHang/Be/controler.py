@@ -99,10 +99,8 @@ def delete_user(user_id: int, db: Session = Depends(get_db)):
     db.delete(user)
     db.commit()
     return {"message": "Xóa thành công"}
-
-
-# ================= PRODUCT API =================
-
+ 
+#them san pham product 
 @app.post("/products", response_model=ProductResponse)
 def create_product(product: ProductCreate, db: Session = Depends(get_db)):
     db_product = Product(**product.dict())
@@ -111,7 +109,15 @@ def create_product(product: ProductCreate, db: Session = Depends(get_db)):
     db.refresh(db_product)
     return db_product
 
-
+#loc ra san pham co gia tri <1000
+@app.get("/products/filter")
+def get_productnhohon(db: Session=Depends(get_db)): 
+    print("API <1000 đang chạy")
+    return db.query(Product).filter(Product.gia < 1000).all()
+#loc ra san pham co gia tri >1000 
+@app.get("/products/bes",response_model=list[ProductResponse])
+def get_productlonhon(db:Session=Depends(get_db)):
+    return  db.query(Product).filter(Product.gia>1000).all()
 @app.get("/products", response_model=list[ProductResponse])
 def get_products(db: Session = Depends(get_db)):
     return db.query(Product).all()
